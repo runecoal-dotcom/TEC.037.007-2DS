@@ -1,0 +1,15 @@
+// 1. Function Expression - Valor Base
+const calcularValorBase = function (horas, precohora) {
+    return horas * precohora;
+}
+// 2. Arrow Function - Adicionar taxa fixa
+const adicionarTaxaFixa = (valor) => valor + 2.00;
+// 3. Function Declaration - exibirRecibo
+function exibirRecibo (totalfinal) {
+    console.log("--- ESTACIONAMENTO ---")
+    console.log("Valor a pagar: R$ " + totalfinal.toFixed(2));
+}
+// 4. Execução
+let ValorBruto = calcularValorBase(3, 10);
+let ValorComTaxa = adicionarTaxaFixa(ValorBruto);
+exibirRecibo(ValorComTaxa);
