@@ -1,0 +1,22 @@
+<html>
+    <head> 
+        <title>Aprendendo com DOM</title>
+        <body> 
+       <H1>Modelo de Objeto de Documento</H1> 
+       <a id="nav" href="Clonacartao.html">Saiba mais</a>
+       <img src="assets/ExuCaveirinha.jpg" width="400px" height="300px" />
+       <img id="lampada" src="assets/acesa.png" />
+       <button onclick="ligar()">Ligar</button>
+       <button onclick="desligar()">Desligar</button>
+         <script>
+            function ligar() {
+                document.getElementById("lampada").src = "assets/acesa.png";
+            }
+
+            function desligar() {
+                document.getElementById("lampada").src = "assets/apagada.png";
+            }
+            </script>
+        </body>
+    </head>
+</html>
