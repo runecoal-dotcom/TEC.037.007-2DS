@@ -34,8 +34,13 @@ document.getElementById("hp-hero2").value = hero2.hp;
 document.getElementById("mana-hero2").value = hero2.mana;
 document.getElementById("energia-hero2").value = hero2.energia;
 
-let habilidadesHero = [
-    new Habilidade(1, "Ataque Básico", 10, 0, 0),
-    new Habilidade(2, "Ataque Especial", 25, 20, 10),
-    new Habilidade(3, "Ataque Supremo", 50, 50, 25)
+let ListaHabilidades = [
+    new Habilidade(1, "🏹 Ataque Básico", 4, 0, 0),
+    new Habilidade(2, "🪄 Skill", 8, 10, 0),
+    new Habilidade(3, "🧨 Supremo", 15, 0, 100)
 ];
+ListaHabilidades.forEach(hab => {
+    let btn = document.createElement("button");
+    btn.innerText = hab.nome;
+    containerBtn.appendChild(btn);
+})
