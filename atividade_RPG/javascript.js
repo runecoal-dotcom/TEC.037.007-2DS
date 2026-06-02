@@ -26,6 +26,7 @@ class Personagem {
         }
     }
     boss_atacar(alvo) {
+        console.log(alvo.hp);
         if (this.energia >= 100) {
             alvo.hp = alvo.hp - 15;
             this.energia = 0;
@@ -70,16 +71,38 @@ ListaHabilidades.forEach(hab => {
     containerBtn.appendChild(btn);
     btn.onclick = () => {
         hero.hero_atacar(hero2, hab);
+        hero2.boss_atacar(hero);
         document.getElementById("hp-hero2").value = hero2.hp;
+        document.getElementById("hp-hero").value = hero.hp;
         atualizartela()
     }
 })
 const atualizartela = () => {
-    document.getElementById("hp-hero2").value = hero2.hp;
-    document.getElementById("mana-hero2").value = hero2.mana;
-    document.getElementById("energia-hero2").value = hero2.energia;
 
     document.getElementById("hp-hero").value = hero.hp;
     document.getElementById("mana-hero").value = hero.mana;
     document.getElementById("energia-hero").value = hero.energia;
+
+    document.getElementById("hp-hero2").value = hero2.hp;
+    document.getElementById("mana-hero2").value = hero2.mana;
+    document.getElementById("energia-hero2").value = hero2.energia;
+}
+
+    if (hero.hp <= 0) {
+    game_over();
+  }
+
+  if (hero2.hp <= 0) {
+    victory();
+}
+
+async function game_over() {
+    const resposta = await fetch('gameover.html');
+    const htmlContent = await resposta.text();
+    document.getElementById('tela').innerHTML = htmlContent;
+}
+async function victory() {
+    const resposta = await fetch('victory.html');
+    const htmlContent = await resposta.text();
+    document.getElementById('tela').innerHTML = htmlContent;
 }
