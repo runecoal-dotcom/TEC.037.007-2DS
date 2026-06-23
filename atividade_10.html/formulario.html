@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <h1>Cadastro de Produtos</h1>
+    <form id="formProduto">
+        <label>Nome</label>
+        <input type="text" placeholder="Nome do produto" id="nome"  
+        class="form-control">
+
+         <label>Categoria</label>
+        <select class="form-select" id="categoria">
+            <option value="eletronicos">Eletrônicos</option>
+            <option value="roupas">Roupas</option>
+            <option value="alimentos">Alimentos</option>
+            <option value="limpeza">Limpeza</option>
+        </select>
+        <label>Quantidade</label>
+        <input type="number" placeholder="Quantidade do produto" id="quantidade"  
+        class="form-control">
+        <label>Preço</label>
+        <input type="number" placeholder="Preço do produto" id="preco" class="form-control">
+
+        <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody id="tabelaProdutos">
+        <!-- Os produtos cadastrados serão adicionados aqui -->     
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
